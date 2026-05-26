@@ -1,0 +1,35 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# ===== 虚拟环境 =====
+.venv/
+venv/
+env/
+
+# ===== 模型产物(体积大且可由训练再生,应放 HuggingFace Hub 分发)=====
+finetune/output/
+
+# ===== 第三方仓库(请自行 clone 或作为 submodule,不要直接提交)=====
+LLaMA-Factory/
+
+# ===== RAG 索引(由 `python -m rag.build_index` 再生)=====
+rag/index/
+
+# ===== 日志 =====
+logs/
+
+# ===== 评测输出(生成物)=====
+data/test/eval_results.json
+
+# ===== 本机真实配置(保留本地继续用,不上传;仓库提供 .example 模板)=====
+config/config.yaml
+scripts/start_vllm.sh
+local_env_backup/
+
+# ===== 浏览器另存的页面快照(非源码,不可独立运行)=====
+*.html
+*_files/
+CreditAgent_demo*.html

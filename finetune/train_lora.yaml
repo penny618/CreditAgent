@@ -1,0 +1,52 @@
+# ============================================================
+# LLaMA-Factory LoRA 微调配置 —— Qwen3-4B 信贷风控适配
+# 使用: llamafactory-cli train finetune/train_lora.yaml
+# ============================================================
+
+### model
+model_name_or_path: Qwen/Qwen3-4B      # HuggingFace 模型 ID,也可换成本地路径
+trust_remote_code: true
+
+### method
+stage: sft                              # 监督微调
+do_train: true
+finetuning_type: lora
+lora_rank: 8
+lora_alpha: 16
+lora_dropout: 0.05
+lora_target: all                        # 对所有线性层注入 LoRA
+
+### dataset
+dataset: credit_qa                      # 对应 dataset_info.json 中的键
+dataset_dir: ./data/finetune            # 数据集与 dataset_info.json 所在目录
+template: qwen                          # Qwen 系列对话模板
+cutoff_len: 2048
+max_samples: 100000
+overwrite_cache: true
+preprocessing_num_workers: 8
+
+### output
+output_dir: ./finetune/output/credit_lora
+logging_steps: 5
+save_steps: 50
+plot_loss: true
+overwrite_output_dir: true
+report_to: tensorboard                  # 上报到 TensorBoard,事件文件写入 output_dir/runs/
+# 如需断点续训,取消下一行注释并指向已有 checkpoint:
+# resume_from_checkpoint: ./finetune/output/credit_lora/checkpoint-100
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-4
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true                              # 显存不足可改用 fp16 或开启 quantization
+gradient_checkpointing: true
+
+### eval(可选)
+val_size: 0.1
+per_device_eval_batch_size: 1
+eval_strategy: steps
+eval_steps: 50

@@ -1,0 +1,10 @@
+{
+  "credit_qa": {
+    "file_name": "credit_qa.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}

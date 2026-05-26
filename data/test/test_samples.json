@@ -1,0 +1,778 @@
+[
+  {
+    "id": "case_001",
+    "risk_tier": "medium",
+    "application_text": "客户申请 10.0 万元信用贷。月收入 14800 元,现有月供合计 2400 元,本次贷款期限 36 个月、预计月供约 3210 元。征信方面:无;近 1 个月硬查询 4 次;名下信用卡总授信 5.0 万元,已用约 54%。当前单位工作 1 年,公积金连续缴纳。",
+    "params": {
+      "monthly_income": 14800,
+      "existing_monthly_debt": 2400,
+      "requested_amount": 100000,
+      "loan_term_months": 36,
+      "annual_rate": 0.096,
+      "new_monthly_payment": 3210,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 4,
+      "credit_card_total_limit": 50000,
+      "credit_card_utilization": 0.54,
+      "job_years": 1,
+      "has_housing_fund": true,
+      "loan_type": "信用贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 83,
+    "expected_notes": [
+      "DTI=38%中等",
+      "硬查询4次偏多"
+    ]
+  },
+  {
+    "id": "case_002",
+    "risk_tier": "medium",
+    "application_text": "一笔装修贷申请,借款 179000 元(分 48 期,月还 4200 元)。借款人税前月入 12900 元,既有月度负债 3250 元;无;一个月内被查询征信 5 次;信用卡额度利用率 65%;在职 1 年,公积金未缴纳。",
+    "params": {
+      "monthly_income": 12900,
+      "existing_monthly_debt": 3250,
+      "requested_amount": 179000,
+      "loan_term_months": 48,
+      "annual_rate": 0.06,
+      "new_monthly_payment": 4200,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 5,
+      "credit_card_total_limit": 120000,
+      "credit_card_utilization": 0.65,
+      "job_years": 1,
+      "has_housing_fund": false,
+      "loan_type": "装修贷"
+    },
+    "expected_decision": "转人工复核",
+    "expected_score": 57,
+    "expected_notes": [
+      "DTI=58%偏高",
+      "硬查询5次偏多",
+      "信用卡利用率65%偏高"
+    ]
+  },
+  {
+    "id": "case_003",
+    "risk_tier": "medium",
+    "application_text": "客户申请 10.6 万元装修贷。月收入 11500 元,现有月供合计 2650 元,本次贷款期限 36 个月、预计月供约 3340 元。征信方面:无;近 1 个月硬查询 5 次;名下信用卡总授信 5.0 万元,已用约 72%。当前单位工作 3 年,公积金未缴纳。",
+    "params": {
+      "monthly_income": 11500,
+      "existing_monthly_debt": 2650,
+      "requested_amount": 106000,
+      "loan_term_months": 36,
+      "annual_rate": 0.084,
+      "new_monthly_payment": 3340,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 5,
+      "credit_card_total_limit": 50000,
+      "credit_card_utilization": 0.72,
+      "job_years": 3,
+      "has_housing_fund": false,
+      "loan_type": "装修贷"
+    },
+    "expected_decision": "转人工复核",
+    "expected_score": 60,
+    "expected_notes": [
+      "DTI=52%偏高",
+      "硬查询5次偏多",
+      "信用卡利用率72%偏高"
+    ]
+  },
+  {
+    "id": "case_004",
+    "risk_tier": "high",
+    "application_text": "申请信息:信用贷,金额 355000 元,期限 24 个月,月供约 15730 元。申请人月收入 8000 元,目前每月需偿还其他贷款 3100 元。信用记录:近6个月有2次逾期31-60天,近 30 天征信查询 11 次,信用卡使用率 91%。工作年限 0 年,无公积金。",
+    "params": {
+      "monthly_income": 8000,
+      "existing_monthly_debt": 3100,
+      "requested_amount": 355000,
+      "loan_term_months": 24,
+      "annual_rate": 0.06,
+      "new_monthly_payment": 15730,
+      "overdue_history": "近6个月有2次逾期31-60天",
+      "hard_inquiries_1m": 11,
+      "credit_card_total_limit": 50000,
+      "credit_card_utilization": 0.91,
+      "job_years": 0,
+      "has_housing_fund": false,
+      "loan_type": "信用贷"
+    },
+    "expected_decision": "拒绝",
+    "expected_score": 0,
+    "expected_notes": [
+      "DTI=235%严重超标",
+      "严重逾期(红线)",
+      "硬查询11次,多头借贷",
+      "信用卡利用率91%过高"
+    ]
+  },
+  {
+    "id": "case_005",
+    "risk_tier": "high",
+    "application_text": "申请信息:信用贷,金额 347000 元,期限 12 个月,月供约 30250 元。申请人月收入 7200 元,目前每月需偿还其他贷款 3900 元。信用记录:近6个月有3次逾期(连三),近 30 天征信查询 12 次,信用卡使用率 95%。工作年限 0 年,无公积金。",
+    "params": {
+      "monthly_income": 7200,
+      "existing_monthly_debt": 3900,
+      "requested_amount": 347000,
+      "loan_term_months": 12,
+      "annual_rate": 0.084,
+      "new_monthly_payment": 30250,
+      "overdue_history": "近6个月有3次逾期(连三)",
+      "hard_inquiries_1m": 12,
+      "credit_card_total_limit": 30000,
+      "credit_card_utilization": 0.95,
+      "job_years": 0,
+      "has_housing_fund": false,
+      "loan_type": "信用贷"
+    },
+    "expected_decision": "拒绝",
+    "expected_score": 0,
+    "expected_notes": [
+      "DTI=474%严重超标",
+      "严重逾期(红线)",
+      "硬查询12次,多头借贷",
+      "信用卡利用率95%过高"
+    ]
+  },
+  {
+    "id": "case_006",
+    "risk_tier": "low",
+    "application_text": "客户申请 13.4 万元装修贷。月收入 17100 元,现有月供合计 400 元,本次贷款期限 60 个月、预计月供约 2740 元。征信方面:无;近 1 个月硬查询 2 次;名下信用卡总授信 10.0 万元,已用约 10%。当前单位工作 10 年,公积金连续缴纳。",
+    "params": {
+      "monthly_income": 17100,
+      "existing_monthly_debt": 400,
+      "requested_amount": 134000,
+      "loan_term_months": 60,
+      "annual_rate": 0.084,
+      "new_monthly_payment": 2740,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 2,
+      "credit_card_total_limit": 100000,
+      "credit_card_utilization": 0.1,
+      "job_years": 10,
+      "has_housing_fund": true,
+      "loan_type": "装修贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 100,
+    "expected_notes": []
+  },
+  {
+    "id": "case_007",
+    "risk_tier": "low",
+    "application_text": "客户申请 13.0 万元消费贷。月收入 23000 元,现有月供合计 2050 元,本次贷款期限 48 个月、预计月供约 3270 元。征信方面:无;近 1 个月硬查询 0 次;名下信用卡总授信 10.0 万元,已用约 27%。当前单位工作 5 年,公积金连续缴纳。",
+    "params": {
+      "monthly_income": 23000,
+      "existing_monthly_debt": 2050,
+      "requested_amount": 130000,
+      "loan_term_months": 48,
+      "annual_rate": 0.096,
+      "new_monthly_payment": 3270,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 0,
+      "credit_card_total_limit": 100000,
+      "credit_card_utilization": 0.27,
+      "job_years": 5,
+      "has_housing_fund": true,
+      "loan_type": "消费贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 100,
+    "expected_notes": []
+  },
+  {
+    "id": "case_008",
+    "risk_tier": "medium",
+    "application_text": "一笔消费贷申请,借款 182000 元(分 36 期,月还 5840 元)。借款人税前月入 17000 元,既有月度负债 2300 元;近6个月有1次逾期1-30天;一个月内被查询征信 5 次;信用卡额度利用率 61%;在职 5 年,公积金未缴纳。",
+    "params": {
+      "monthly_income": 17000,
+      "existing_monthly_debt": 2300,
+      "requested_amount": 182000,
+      "loan_term_months": 36,
+      "annual_rate": 0.096,
+      "new_monthly_payment": 5840,
+      "overdue_history": "近6个月有1次逾期1-30天",
+      "hard_inquiries_1m": 5,
+      "credit_card_total_limit": 100000,
+      "credit_card_utilization": 0.61,
+      "job_years": 5,
+      "has_housing_fund": false,
+      "loan_type": "消费贷"
+    },
+    "expected_decision": "转人工复核",
+    "expected_score": 65,
+    "expected_notes": [
+      "DTI=48%中等",
+      "轻微逾期",
+      "硬查询5次偏多",
+      "信用卡利用率61%偏高"
+    ]
+  },
+  {
+    "id": "case_009",
+    "risk_tier": "medium",
+    "application_text": "一笔经营贷申请,借款 170000 元(分 48 期,月还 4180 元)。借款人税前月入 15900 元,既有月度负债 2150 元;无;一个月内被查询征信 5 次;信用卡额度利用率 48%;在职 1 年,公积金未缴纳。",
+    "params": {
+      "monthly_income": 15900,
+      "existing_monthly_debt": 2150,
+      "requested_amount": 170000,
+      "loan_term_months": 48,
+      "annual_rate": 0.084,
+      "new_monthly_payment": 4180,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 5,
+      "credit_card_total_limit": 100000,
+      "credit_card_utilization": 0.48,
+      "job_years": 1,
+      "has_housing_fund": false,
+      "loan_type": "经营贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 80,
+    "expected_notes": [
+      "DTI=40%中等",
+      "硬查询5次偏多"
+    ]
+  },
+  {
+    "id": "case_010",
+    "risk_tier": "medium",
+    "application_text": "申请信息:消费贷,金额 181000 元,期限 48 个月,月供约 4350 元。申请人月收入 17400 元,目前每月需偿还其他贷款 2350 元。信用记录:无,近 30 天征信查询 4 次,信用卡使用率 49%。工作年限 4 年,有公积金。",
+    "params": {
+      "monthly_income": 17400,
+      "existing_monthly_debt": 2350,
+      "requested_amount": 181000,
+      "loan_term_months": 48,
+      "annual_rate": 0.072,
+      "new_monthly_payment": 4350,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 4,
+      "credit_card_total_limit": 50000,
+      "credit_card_utilization": 0.49,
+      "job_years": 4,
+      "has_housing_fund": true,
+      "loan_type": "消费贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 86,
+    "expected_notes": [
+      "DTI=39%中等",
+      "硬查询4次偏多"
+    ]
+  },
+  {
+    "id": "case_011",
+    "risk_tier": "low",
+    "application_text": "一笔信用贷申请,借款 91000 元(分 60 期,月还 1760 元)。借款人税前月入 25000 元,既有月度负债 700 元;无;一个月内被查询征信 2 次;信用卡额度利用率 7%;在职 5 年,公积金连续缴纳。",
+    "params": {
+      "monthly_income": 25000,
+      "existing_monthly_debt": 700,
+      "requested_amount": 91000,
+      "loan_term_months": 60,
+      "annual_rate": 0.06,
+      "new_monthly_payment": 1760,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 2,
+      "credit_card_total_limit": 100000,
+      "credit_card_utilization": 0.07,
+      "job_years": 5,
+      "has_housing_fund": true,
+      "loan_type": "信用贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 100,
+    "expected_notes": []
+  },
+  {
+    "id": "case_012",
+    "risk_tier": "high",
+    "application_text": "一笔信用贷申请,借款 339000 元(分 24 期,月还 15210 元)。借款人税前月入 6300 元,既有月度负债 2300 元;近6个月有2次逾期31-60天;一个月内被查询征信 8 次;信用卡额度利用率 97%;在职 1 年,公积金未缴纳。",
+    "params": {
+      "monthly_income": 6300,
+      "existing_monthly_debt": 2300,
+      "requested_amount": 339000,
+      "loan_term_months": 24,
+      "annual_rate": 0.072,
+      "new_monthly_payment": 15210,
+      "overdue_history": "近6个月有2次逾期31-60天",
+      "hard_inquiries_1m": 8,
+      "credit_card_total_limit": 50000,
+      "credit_card_utilization": 0.97,
+      "job_years": 1,
+      "has_housing_fund": false,
+      "loan_type": "信用贷"
+    },
+    "expected_decision": "拒绝",
+    "expected_score": 0,
+    "expected_notes": [
+      "DTI=278%严重超标",
+      "严重逾期(红线)",
+      "硬查询8次,多头借贷",
+      "信用卡利用率97%过高"
+    ]
+  },
+  {
+    "id": "case_013",
+    "risk_tier": "high",
+    "application_text": "一笔消费贷申请,借款 238000 元(分 12 期,月还 20750 元)。借款人税前月入 8600 元,既有月度负债 2800 元;近6个月有3次逾期(连三);一个月内被查询征信 10 次;信用卡额度利用率 80%;在职 0 年,公积金未缴纳。",
+    "params": {
+      "monthly_income": 8600,
+      "existing_monthly_debt": 2800,
+      "requested_amount": 238000,
+      "loan_term_months": 12,
+      "annual_rate": 0.084,
+      "new_monthly_payment": 20750,
+      "overdue_history": "近6个月有3次逾期(连三)",
+      "hard_inquiries_1m": 10,
+      "credit_card_total_limit": 120000,
+      "credit_card_utilization": 0.8,
+      "job_years": 0,
+      "has_housing_fund": false,
+      "loan_type": "消费贷"
+    },
+    "expected_decision": "拒绝",
+    "expected_score": 0,
+    "expected_notes": [
+      "DTI=274%严重超标",
+      "严重逾期(红线)",
+      "硬查询10次,多头借贷",
+      "信用卡利用率80%过高"
+    ]
+  },
+  {
+    "id": "case_014",
+    "risk_tier": "high",
+    "application_text": "一笔经营贷申请,借款 197000 元(分 12 期,月还 17170 元)。借款人税前月入 10100 元,既有月度负债 3150 元;近1年累计逾期6次;一个月内被查询征信 11 次;信用卡额度利用率 81%;在职 1 年,公积金未缴纳。",
+    "params": {
+      "monthly_income": 10100,
+      "existing_monthly_debt": 3150,
+      "requested_amount": 197000,
+      "loan_term_months": 12,
+      "annual_rate": 0.084,
+      "new_monthly_payment": 17170,
+      "overdue_history": "近1年累计逾期6次",
+      "hard_inquiries_1m": 11,
+      "credit_card_total_limit": 50000,
+      "credit_card_utilization": 0.81,
+      "job_years": 1,
+      "has_housing_fund": false,
+      "loan_type": "经营贷"
+    },
+    "expected_decision": "拒绝",
+    "expected_score": 0,
+    "expected_notes": [
+      "DTI=201%严重超标",
+      "严重逾期(红线)",
+      "硬查询11次,多头借贷",
+      "信用卡利用率81%过高"
+    ]
+  },
+  {
+    "id": "case_015",
+    "risk_tier": "medium",
+    "application_text": "申请信息:装修贷,金额 175000 元,期限 48 个月,月供约 4210 元。申请人月收入 17600 元,目前每月需偿还其他贷款 4550 元。信用记录:无,近 30 天征信查询 2 次,信用卡使用率 66%。工作年限 1 年,无公积金。",
+    "params": {
+      "monthly_income": 17600,
+      "existing_monthly_debt": 4550,
+      "requested_amount": 175000,
+      "loan_term_months": 48,
+      "annual_rate": 0.072,
+      "new_monthly_payment": 4210,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 2,
+      "credit_card_total_limit": 100000,
+      "credit_card_utilization": 0.66,
+      "job_years": 1,
+      "has_housing_fund": false,
+      "loan_type": "装修贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 82,
+    "expected_notes": [
+      "DTI=50%中等",
+      "信用卡利用率66%偏高"
+    ]
+  },
+  {
+    "id": "case_016",
+    "risk_tier": "high",
+    "application_text": "客户申请 37.1 万元信用贷。月收入 8300 元,现有月供合计 3450 元,本次贷款期限 12 个月、预计月供约 31930 元。征信方面:近6个月有3次逾期(连三);近 1 个月硬查询 7 次;名下信用卡总授信 8.0 万元,已用约 81%。当前单位工作 0 年,公积金未缴纳。",
+    "params": {
+      "monthly_income": 8300,
+      "existing_monthly_debt": 3450,
+      "requested_amount": 371000,
+      "loan_term_months": 12,
+      "annual_rate": 0.06,
+      "new_monthly_payment": 31930,
+      "overdue_history": "近6个月有3次逾期(连三)",
+      "hard_inquiries_1m": 7,
+      "credit_card_total_limit": 80000,
+      "credit_card_utilization": 0.81,
+      "job_years": 0,
+      "has_housing_fund": false,
+      "loan_type": "信用贷"
+    },
+    "expected_decision": "拒绝",
+    "expected_score": 0,
+    "expected_notes": [
+      "DTI=426%严重超标",
+      "严重逾期(红线)",
+      "硬查询7次,多头借贷",
+      "信用卡利用率81%过高"
+    ]
+  },
+  {
+    "id": "case_017",
+    "risk_tier": "low",
+    "application_text": "客户申请 12.0 万元消费贷。月收入 28800 元,现有月供合计 600 元,本次贷款期限 36 个月、预计月供约 3650 元。征信方面:无;近 1 个月硬查询 0 次;名下信用卡总授信 12.0 万元,已用约 16%。当前单位工作 11 年,公积金连续缴纳。",
+    "params": {
+      "monthly_income": 28800,
+      "existing_monthly_debt": 600,
+      "requested_amount": 120000,
+      "loan_term_months": 36,
+      "annual_rate": 0.06,
+      "new_monthly_payment": 3650,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 0,
+      "credit_card_total_limit": 120000,
+      "credit_card_utilization": 0.16,
+      "job_years": 11,
+      "has_housing_fund": true,
+      "loan_type": "消费贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 100,
+    "expected_notes": []
+  },
+  {
+    "id": "case_018",
+    "risk_tier": "medium",
+    "application_text": "申请信息:信用贷,金额 163000 元,期限 36 个月,月供约 5230 元。申请人月收入 11300 元,目前每月需偿还其他贷款 2050 元。信用记录:近6个月有1次逾期1-30天,近 30 天征信查询 2 次,信用卡使用率 69%。工作年限 4 年,无公积金。",
+    "params": {
+      "monthly_income": 11300,
+      "existing_monthly_debt": 2050,
+      "requested_amount": 163000,
+      "loan_term_months": 36,
+      "annual_rate": 0.096,
+      "new_monthly_payment": 5230,
+      "overdue_history": "近6个月有1次逾期1-30天",
+      "hard_inquiries_1m": 2,
+      "credit_card_total_limit": 50000,
+      "credit_card_utilization": 0.69,
+      "job_years": 4,
+      "has_housing_fund": false,
+      "loan_type": "信用贷"
+    },
+    "expected_decision": "转人工复核",
+    "expected_score": 60,
+    "expected_notes": [
+      "DTI=64%偏高",
+      "轻微逾期",
+      "信用卡利用率69%偏高"
+    ]
+  },
+  {
+    "id": "case_019",
+    "risk_tier": "medium",
+    "application_text": "一笔消费贷申请,借款 195000 元(分 48 期,月还 4690 元)。借款人税前月入 13400 元,既有月度负债 3100 元;无;一个月内被查询征信 2 次;信用卡额度利用率 50%;在职 3 年,公积金连续缴纳。",
+    "params": {
+      "monthly_income": 13400,
+      "existing_monthly_debt": 3100,
+      "requested_amount": 195000,
+      "loan_term_months": 48,
+      "annual_rate": 0.072,
+      "new_monthly_payment": 4690,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 2,
+      "credit_card_total_limit": 50000,
+      "credit_card_utilization": 0.5,
+      "job_years": 3,
+      "has_housing_fund": true,
+      "loan_type": "消费贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 81,
+    "expected_notes": [
+      "DTI=58%偏高"
+    ]
+  },
+  {
+    "id": "case_020",
+    "risk_tier": "low",
+    "application_text": "申请信息:经营贷,金额 129000 元,期限 36 个月,月供约 3920 元。申请人月收入 30600 元,目前每月需偿还其他贷款 1800 元。信用记录:无,近 30 天征信查询 0 次,信用卡使用率 28%。工作年限 12 年,有公积金。",
+    "params": {
+      "monthly_income": 30600,
+      "existing_monthly_debt": 1800,
+      "requested_amount": 129000,
+      "loan_term_months": 36,
+      "annual_rate": 0.06,
+      "new_monthly_payment": 3920,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 0,
+      "credit_card_total_limit": 30000,
+      "credit_card_utilization": 0.29,
+      "job_years": 12,
+      "has_housing_fund": true,
+      "loan_type": "经营贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 100,
+    "expected_notes": []
+  },
+  {
+    "id": "case_021",
+    "risk_tier": "medium",
+    "application_text": "申请信息:经营贷,金额 174000 元,期限 36 个月,月供约 5290 元。申请人月收入 10900 元,目前每月需偿还其他贷款 2950 元。信用记录:近6个月有1次逾期1-30天,近 30 天征信查询 4 次,信用卡使用率 62%。工作年限 2 年,无公积金。",
+    "params": {
+      "monthly_income": 10900,
+      "existing_monthly_debt": 2950,
+      "requested_amount": 174000,
+      "loan_term_months": 36,
+      "annual_rate": 0.06,
+      "new_monthly_payment": 5290,
+      "overdue_history": "近6个月有1次逾期1-30天",
+      "hard_inquiries_1m": 4,
+      "credit_card_total_limit": 100000,
+      "credit_card_utilization": 0.62,
+      "job_years": 2,
+      "has_housing_fund": false,
+      "loan_type": "经营贷"
+    },
+    "expected_decision": "拒绝",
+    "expected_score": 27,
+    "expected_notes": [
+      "DTI=76%严重超标",
+      "轻微逾期",
+      "硬查询4次偏多",
+      "信用卡利用率62%偏高"
+    ]
+  },
+  {
+    "id": "case_022",
+    "risk_tier": "high",
+    "application_text": "一笔消费贷申请,借款 349000 元(分 24 期,月还 16040 元)。借款人税前月入 8200 元,既有月度负债 2700 元;近6个月有3次逾期(连三);一个月内被查询征信 9 次;信用卡额度利用率 86%;在职 2 年,公积金未缴纳。",
+    "params": {
+      "monthly_income": 8200,
+      "existing_monthly_debt": 2700,
+      "requested_amount": 349000,
+      "loan_term_months": 24,
+      "annual_rate": 0.096,
+      "new_monthly_payment": 16040,
+      "overdue_history": "近6个月有3次逾期(连三)",
+      "hard_inquiries_1m": 9,
+      "credit_card_total_limit": 30000,
+      "credit_card_utilization": 0.86,
+      "job_years": 2,
+      "has_housing_fund": false,
+      "loan_type": "消费贷"
+    },
+    "expected_decision": "拒绝",
+    "expected_score": 0,
+    "expected_notes": [
+      "DTI=229%严重超标",
+      "严重逾期(红线)",
+      "硬查询9次,多头借贷",
+      "信用卡利用率86%过高"
+    ]
+  },
+  {
+    "id": "case_023",
+    "risk_tier": "low",
+    "application_text": "一笔消费贷申请,借款 77000 元(分 48 期,月还 1810 元)。借款人税前月入 21900 元,既有月度负债 1300 元;无;一个月内被查询征信 0 次;信用卡额度利用率 27%;在职 10 年,公积金连续缴纳。",
+    "params": {
+      "monthly_income": 21900,
+      "existing_monthly_debt": 1300,
+      "requested_amount": 77000,
+      "loan_term_months": 48,
+      "annual_rate": 0.06,
+      "new_monthly_payment": 1810,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 0,
+      "credit_card_total_limit": 80000,
+      "credit_card_utilization": 0.27,
+      "job_years": 10,
+      "has_housing_fund": true,
+      "loan_type": "消费贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 100,
+    "expected_notes": []
+  },
+  {
+    "id": "case_024",
+    "risk_tier": "high",
+    "application_text": "一笔装修贷申请,借款 353000 元(分 12 期,月还 30580 元)。借款人税前月入 9500 元,既有月度负债 3550 元;近6个月有2次逾期31-60天;一个月内被查询征信 10 次;信用卡额度利用率 85%;在职 0 年,公积金未缴纳。",
+    "params": {
+      "monthly_income": 9500,
+      "existing_monthly_debt": 3550,
+      "requested_amount": 353000,
+      "loan_term_months": 12,
+      "annual_rate": 0.072,
+      "new_monthly_payment": 30580,
+      "overdue_history": "近6个月有2次逾期31-60天",
+      "hard_inquiries_1m": 10,
+      "credit_card_total_limit": 30000,
+      "credit_card_utilization": 0.85,
+      "job_years": 0,
+      "has_housing_fund": false,
+      "loan_type": "装修贷"
+    },
+    "expected_decision": "拒绝",
+    "expected_score": 0,
+    "expected_notes": [
+      "DTI=359%严重超标",
+      "严重逾期(红线)",
+      "硬查询10次,多头借贷",
+      "信用卡利用率85%过高"
+    ]
+  },
+  {
+    "id": "case_025",
+    "risk_tier": "low",
+    "application_text": "客户申请 8.6 万元消费贷。月收入 21900 元,现有月供合计 1850 元,本次贷款期限 60 个月、预计月供约 1760 元。征信方面:无;近 1 个月硬查询 0 次;名下信用卡总授信 8.0 万元,已用约 18%。当前单位工作 9 年,公积金连续缴纳。",
+    "params": {
+      "monthly_income": 21900,
+      "existing_monthly_debt": 1850,
+      "requested_amount": 86000,
+      "loan_term_months": 60,
+      "annual_rate": 0.084,
+      "new_monthly_payment": 1760,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 0,
+      "credit_card_total_limit": 80000,
+      "credit_card_utilization": 0.18,
+      "job_years": 9,
+      "has_housing_fund": true,
+      "loan_type": "消费贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 100,
+    "expected_notes": []
+  },
+  {
+    "id": "case_026",
+    "risk_tier": "low",
+    "application_text": "一笔消费贷申请,借款 143000 元(分 48 期,月还 3440 元)。借款人税前月入 25900 元,既有月度负债 2350 元;无;一个月内被查询征信 2 次;信用卡额度利用率 24%;在职 3 年,公积金连续缴纳。",
+    "params": {
+      "monthly_income": 25900,
+      "existing_monthly_debt": 2350,
+      "requested_amount": 143000,
+      "loan_term_months": 48,
+      "annual_rate": 0.072,
+      "new_monthly_payment": 3440,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 2,
+      "credit_card_total_limit": 120000,
+      "credit_card_utilization": 0.24,
+      "job_years": 3,
+      "has_housing_fund": true,
+      "loan_type": "消费贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 100,
+    "expected_notes": []
+  },
+  {
+    "id": "case_027",
+    "risk_tier": "high",
+    "application_text": "一笔经营贷申请,借款 398000 元(分 24 期,月还 17860 元)。借款人税前月入 6200 元,既有月度负债 2700 元;近1年累计逾期6次;一个月内被查询征信 8 次;信用卡额度利用率 88%;在职 0 年,公积金未缴纳。",
+    "params": {
+      "monthly_income": 6200,
+      "existing_monthly_debt": 2700,
+      "requested_amount": 398000,
+      "loan_term_months": 24,
+      "annual_rate": 0.072,
+      "new_monthly_payment": 17860,
+      "overdue_history": "近1年累计逾期6次",
+      "hard_inquiries_1m": 8,
+      "credit_card_total_limit": 30000,
+      "credit_card_utilization": 0.88,
+      "job_years": 0,
+      "has_housing_fund": false,
+      "loan_type": "经营贷"
+    },
+    "expected_decision": "拒绝",
+    "expected_score": 0,
+    "expected_notes": [
+      "DTI=332%严重超标",
+      "严重逾期(红线)",
+      "硬查询8次,多头借贷",
+      "信用卡利用率88%过高"
+    ]
+  },
+  {
+    "id": "case_028",
+    "risk_tier": "low",
+    "application_text": "客户申请 10.6 万元消费贷。月收入 23100 元,现有月供合计 1800 元,本次贷款期限 60 个月、预计月供约 2230 元。征信方面:无;近 1 个月硬查询 0 次;名下信用卡总授信 5.0 万元,已用约 28%。当前单位工作 5 年,公积金连续缴纳。",
+    "params": {
+      "monthly_income": 23100,
+      "existing_monthly_debt": 1800,
+      "requested_amount": 106000,
+      "loan_term_months": 60,
+      "annual_rate": 0.096,
+      "new_monthly_payment": 2230,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 0,
+      "credit_card_total_limit": 50000,
+      "credit_card_utilization": 0.29,
+      "job_years": 5,
+      "has_housing_fund": true,
+      "loan_type": "消费贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 100,
+    "expected_notes": []
+  },
+  {
+    "id": "case_029",
+    "risk_tier": "low",
+    "application_text": "申请信息:经营贷,金额 113000 元,期限 60 个月,月供约 2250 元。申请人月收入 25800 元,目前每月需偿还其他贷款 2400 元。信用记录:无,近 30 天征信查询 0 次,信用卡使用率 12%。工作年限 10 年,有公积金。",
+    "params": {
+      "monthly_income": 25800,
+      "existing_monthly_debt": 2400,
+      "requested_amount": 113000,
+      "loan_term_months": 60,
+      "annual_rate": 0.072,
+      "new_monthly_payment": 2250,
+      "overdue_history": "无",
+      "hard_inquiries_1m": 0,
+      "credit_card_total_limit": 30000,
+      "credit_card_utilization": 0.12,
+      "job_years": 10,
+      "has_housing_fund": true,
+      "loan_type": "经营贷"
+    },
+    "expected_decision": "通过",
+    "expected_score": 100,
+    "expected_notes": []
+  },
+  {
+    "id": "case_030",
+    "risk_tier": "high",
+    "application_text": "申请信息:装修贷,金额 388000 元,期限 12 个月,月供约 33610 元。申请人月收入 7800 元,目前每月需偿还其他贷款 2900 元。信用记录:近1年累计逾期6次,近 30 天征信查询 8 次,信用卡使用率 80%。工作年限 1 年,无公积金。",
+    "params": {
+      "monthly_income": 7800,
+      "existing_monthly_debt": 2900,
+      "requested_amount": 388000,
+      "loan_term_months": 12,
+      "annual_rate": 0.072,
+      "new_monthly_payment": 33610,
+      "overdue_history": "近1年累计逾期6次",
+      "hard_inquiries_1m": 8,
+      "credit_card_total_limit": 50000,
+      "credit_card_utilization": 0.8,
+      "job_years": 1,
+      "has_housing_fund": false,
+      "loan_type": "装修贷"
+    },
+    "expected_decision": "拒绝",
+    "expected_score": 0,
+    "expected_notes": [
+      "DTI=468%严重超标",
+      "严重逾期(红线)",
+      "硬查询8次,多头借贷",
+      "信用卡利用率80%过高"
+    ]
+  }
+]

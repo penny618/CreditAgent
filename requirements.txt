@@ -1,0 +1,24 @@
+# ---------- 核心 ----------
+torch>=2.1.0
+transformers>=4.45.0
+pyyaml>=6.0
+
+# ---------- RAG 检索 ----------
+FlagEmbedding>=1.2.10        # BGE-M3 嵌入 + BGE-reranker 重排
+faiss-cpu>=1.7.4            # 向量检索(有 GPU 可换 faiss-gpu)
+numpy>=1.24
+
+# ---------- Agent 编排 ----------
+langgraph>=0.2.0
+langchain-core>=0.3.0
+
+# ---------- LLM 调用 ----------
+openai>=1.40.0             # 走 OpenAI 兼容接口(vLLM/Ollama)
+peft>=0.11.0               # backend=transformers 时加载 LoRA
+
+# ---------- 交付 Demo ----------
+streamlit>=1.38.0
+
+# ---------- 微调(单独装,见 finetune/README.md)----------
+# LLaMA-Factory: git clone + pip install -e ".[torch,metrics]"
+# vLLM(部署微调模型): pip install vllm
