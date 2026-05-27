@@ -18,7 +18,7 @@ CreditAgent 把**模型微调、知识检索、多步编排、规则决策**串�
 
 <div align="center">
 
-![CreditAgent 交互 Demo](CreditAgent_demo.png)
+![CreditAgent 交互 Demo](CreditAgent_demo.gif)
 
 </div>
 
